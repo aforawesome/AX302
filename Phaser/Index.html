@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phaser Game</title>
+	<script type="text/javascript" src = "phaser.min.js" src = "app.js"></script>
+</head>
+<body>
+<script type="text/javascript" >
+var game = new Phaser.Game(800,600,Phaser.AUTO,'',{preload:preload, create:create, update:update});
+var score = 0;
+var life = 1;
+function preload(){
+	game.load.image('sky', 'assest/sky.png');
+	game.load.image('ground','assests/platform.png');
+	game.load.image('star', 'assests/star.png')
+	game.load.spritesheet('dude', 'assest/dude.png',32,48);
+	game.load.spritesheet('baddie', 'assest/]baddie.png',32,48)
+}
+function create(){
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.add.sprite(0,0,'sky');
+	platforms = game.add.physicsGroup();
+	platforms.enableBody = true;
+	var ground = platform.create(0,550,'ground');
+	gorund.body.immovable = true;
+	var ledge = platforms.create(400,400,'ground')
+	ledge.body.body.immovable = true;
+	ledge.body.immovable = true;
+	var style = {font: ""}"bold 32px Arial", fill "#fff"}
+	lifelabel = game.add.text(10,5,"Score: ", style);
+	scoretext = game.add.text(420,560,life,style);
+}
+function update(){
+} 
+</script>
+</body>
+</html>
